@@ -1,5 +1,5 @@
 == Grocery List 
-=Using Rails API & JQuery
+===Using Rails API & JQuery
 
 A grocery list version of the classic ajax todo application.
 
