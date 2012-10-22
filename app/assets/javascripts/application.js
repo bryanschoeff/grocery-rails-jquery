@@ -15,14 +15,19 @@ groceries.loadList = function () {
 
 groceries.addItem = function (item, section, done) {
     var data = { grocery_item: { item: item, section: section, done: done }};
-    $.post('grocery_items', data, function() {
-	$('#newitem').val('');
+     $.ajax({
+        type: 'POST',
+        url: 'grocery_items',
+        data: data,
+	dataType: 'json'
+    }).done(function () {
+        $('#newitem').val('');
         groceries.loadList();
     });
 };
 
 groceries.updateDone = function (id, done) {
-   var data = { grocery_item: { done: done }};
+    var data = { grocery_item: { done: done }};
     $.ajax({
         type: 'PUT',
         url: 'grocery_items/' + id,
