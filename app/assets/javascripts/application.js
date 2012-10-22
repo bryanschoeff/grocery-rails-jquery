@@ -5,9 +5,9 @@ groceries.loadList = function () {
     $.getJSON('grocery_items', function (data) {
         
         var grouped = _.groupBy(data, function(item) { return item.section; });
-	grouped = _.map(grouped, function(val, key) { return { section: key, items: val}; });
-        var result = { results: grouped };
-        console.log(JSON.stringify(result));
+	var mapped = _.map(grouped, function(val, key) { return { section: key, items: val}; });
+        var result = { results: mapped };
+        
         $('#grocerylist').html(template(result));
         groceries.rebindList();
     });
