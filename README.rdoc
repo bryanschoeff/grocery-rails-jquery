@@ -1,4 +1,5 @@
-== Grocery List [Rails API; JQuery]
+== Grocery List 
+=Using Rails API & JQuery
 
-A grocery shopping list version of the classic todos application.
+A grocery list version of the classic ajax todo application.
 
